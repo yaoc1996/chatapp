@@ -12,6 +12,7 @@ module.exports = (express, sequelize) => {
 		if (!username || !password) {
 			res.status(406).send("Username or password cannot be empty.");
 		} else {
+			req.body.username = username.toLowerCase();
 			next();
 		}
 	}
